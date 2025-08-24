@@ -1,5 +1,6 @@
 package com.masum.kafkaConsumer.services;
 
+import com.masum.kafkaConsumer.dtos.RiderLocation;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
@@ -11,8 +12,8 @@ public class kafkaConsumer {
         System.out.println("Consumed message 1: " + message);
     }
 
-    @KafkaListener(topics = "test_topic_2", groupId = "test_group_2")
-    public void consume2(String message) {
-        System.out.println("Consumed message 2: " + message);
+    @KafkaListener(topics = "test_topic_3", groupId = "test_group_3")
+    public void consumeRiderLocation(RiderLocation riderLocation) {
+        System.out.println("Consumed Rider Location: " + riderLocation);
     }
 }
